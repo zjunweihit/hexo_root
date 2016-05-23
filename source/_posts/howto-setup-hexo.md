@@ -1,7 +1,9 @@
 ---
 title: How to setup Hexo
 date: 2016-05-22 22:41:01
-tags: hexo
+tags:
+  - linux-env
+  - hexo
 ---
 
 # reference
