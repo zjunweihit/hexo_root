@@ -5,6 +5,10 @@ tags:
   - mac-env
 ---
 
+This doc describes the MAC environment.
+
+<!--more-->
+
 * Modify the hostname
 ```
 sudo scutil --set HostName MacBookPro
