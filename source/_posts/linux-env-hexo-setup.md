@@ -62,6 +62,9 @@ hexo s #server
 hexo d #deploy
 ```
 
+## Reference
+* [简洁轻便的博客平台: Hexo详解](http://www.tuicool.com/articles/ueI7naV)
+
 # How to setup with github(zjunweihit as example)
 
 * Initialize blog
