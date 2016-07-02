@@ -11,7 +11,48 @@ tags:
 
 <!-- more -->
 
-## proxy settings
+# Install Ubuntu
+
+## Ubuntu 12.04 installer in USB mass storage device
+* Download the Ubuntu 12.04 image(*.iso)
+* Prepare a USB mass storage device and connect to the PC(assuming "sdb")
+* Create installer in the USB device
+```
+$ su -
+# fdisk -l
+# dd bs=4M if=*.iso of=/dev/sdb
+```
+* Boot the PC and seclet boot from USB mass storage device
+* I have tried to create one partition on the USB mass storage device, then create the installer in the new partition, other partitions are used for original purpose.
+* USB memory cannot be done successfully, maybe USB hard disk can do this.
+```
+# fdisk /dev/sdb
+  o: create empty partition table
+  n: create new partition(sdb1 sdb2)
+
+# dd bs=4M if=*.iso of=/dev/sdb
+or 
+# dd bs=4M if=*.iso of=/dev/sdb1  --> In this way, the partition cannot be found when booting PC, even if /dev/sdb1 is toggled as boot partition by fdisk(a: option)
+
+# mkfs.vfat /dev/sdb2  --> Partition 2 can be used for windows.
+
+I have created a Ubuntu13.04 installer in partition 1 of a USB hard disk successfully before. But unfortunately I missed the log...
+```
+
+## Ubuntu 12.04 硬件安装
+(似乎依赖于windows系统，不推荐，虽然我目前就的就是这种方式)
+(2016/07/02, 已经不用这种方法了)
+* Usually there are 2 ways to setup by hardware.
+* wubi安装(这可不是五笔啊)
+  # get wubi.exe from ubuntu*.iso
+  # wubi.exe --force-wubi
+  # 因为12.04里，windows内安装的选项被禁用了。
+* non-wubi
+  * refer to
+  * [[http://wenku.baidu.com/view/bad8fe01e87101f69e3195a6.html|setup with easybcd_1]]
+  * [[http://wenku.baidu.com/view/ef1e8b210722192e4536f615.html|setup with easybcd_2]]
+
+# proxy settings
 
 如果使用proxy来wget代码,那么必须要设置正确的proxy环境变量.
 
@@ -47,7 +88,7 @@ Acquire::ftp::Proxy "http://junwei-zhang:junwei123@iproxy.mit.edu:10080";
 * 如果是firefox需要proxy
   * 在网络设置里,输入proxy的IP及端口号
 
-## 确保apt-get工作正常
+# 确保apt-get工作正常
 ```
 apt-get update
 apt-get upgrade
@@ -118,7 +159,7 @@ apt-get download bluez
 apt-get source bluez
 ```
 
-## firefox 同步 ##
+# firefox 同步 #
 * [firefox机器间同步](http://support.mozilla.org/zh-CN/kb/%E5%A6%82%E4%BD%95%E5%9C%A8%E7%94%B5%E8%84%91%E4%B9%8B%E9%97%B4%E5%90%8C%E6%AD%A5Firefox%E7%9A%84%E8%AE%BE%E7%BD%AE)
 * plugin with firefox(V11) in Ubuntu12.04 is incompatible, which because the version is too low.
   * To udpate 1:
@@ -129,31 +170,31 @@ apt-get source bluez
   * sudo apt-get remove firefox
   * sudo apt-get install firefox
 
-## Adobe flash support ##
+# Adobe flash support #
 * Open Ubuntu software center(/usr/bin/software-center), search "flash"
 * Open [adobe flash download](http://get.adobe.com/cn/flashplayer/)
 * Select "APT, 适用于Uubuntu10.04+"
 * Pop the window and choose "/usr/bin/software-center"
 * Software-center could download and install flash plugin automatically
 
-## 关闭ubuntu Tab键自动补全的声音 ##
+# 关闭ubuntu Tab键自动补全的声音 #
 ```
 $ sudo vi /etc/inputrc
 - # set bell-style none
 + set bell-style none
 ```
 
-## 安装git ##
+# 安装git #
 ```
 $ sudo apt-get install git
 ```
 
-## 安装quilt ##
+# 安装quilt #
 ```
 sudo apt-get install quilt
 ```
 
-## 安装ssh ##
+# 安装ssh #
 ```
 $ sudo apt-get install ssh
 ```
@@ -166,7 +207,7 @@ sudo vi /etc/ssh/sshd_config
 sudo service ssh restart
 ```
 
-### ssh后 perl: warning: Setting locale failed ###
+## ssh后 perl: warning: Setting locale failed ##
 有时在chroot后到一个新的rootfs中，make uImage会在编译过程中出现以下warning。
 ```
   GEN     lib/oid_registry_data.c
@@ -200,24 +241,24 @@ locale-gen en_US.UTF-8
 Referrence:
   * [locale-variables-have-no-effect-in-remote-shell-perl-warning-setting-locale-f](http://askubuntu.com/questions/144235/locale-variables-have-no-effect-in-remote-shell-perl-warning-setting-locale-f)
 
-## 设置默认shell为bash ##
+# 设置默认shell为bash #
 (Ubuntu12.04默认shell为dash,即/bin/sh --> /bin/dash)
 ```
 $ sudo dpkg-reconfigure dash
 --> No
 ```
 
-## rpm 包安装 ##
+# rpm 包安装 #
 ```
 $ apt-get install rpm
 ```
 
-## 64-bit 系统对32-bit的兼容 ##
+# 64-bit 系统对32-bit的兼容 #
 ```
 $ sudo apt-get install ia32-libs
 ```
 
-## 安装五笔 ##
+# 安装五笔 #
 ```
 sudo apt-get install ibus-table-wubi
 ```
@@ -243,7 +284,7 @@ $ sudo apt-get install ubuntu-desktop
   * Open `System Setting` and set the `Switch to next source` by other hotkey.
 * Yeap, it's work now!
 
-## 设置背景色 ##
+# 设置背景色 #
 ```
 色度,饱和度,亮度
 85,90,205
@@ -252,7 +293,7 @@ rgb
 #CCE8CF
 ```
 
-## vim 安装 ##
+# vim 安装 #
 * ubuntu12.04默认不能安装vim,这会导致vim相关的配置文件都无效.可以用以下方法安装vim.
 ```
 The following packages have unmet dependencies:
@@ -268,7 +309,7 @@ $ sudo apt-get remove vim-common
 $ sudo apt-get install vim
 ```
 
-## 恢复光标关闭前的位置 ##
+# 恢复光标关闭前的位置 #
 * 增加以下内容在.vimrc
 ```
 if has("autocmd")
@@ -294,7 +335,7 @@ $ ll ~/.viminfo
  ^^          ^^^^^^^
 ```
 
-## 目录結构 ##
+# 目录結构 #
 * vimwiki is got from internet
 ```
 $ mkdir -p ~/.vim
@@ -309,7 +350,7 @@ zjunwei@ubuntu:~$ ls .vim/
 autoload  doc  ftplugin  plugin  syntax  vimwiki
 ```
 
-## 创建root及其密码 ##
+# 创建root及其密码 #
 ```
 zjunwei@ubuntu:~$ sudo passwd root
 [sudo] password for zjunwei:
@@ -321,7 +362,7 @@ Password:
 root@ubuntu:~#
 ```
 
-## 设置默认编辑器 ##
+# 设置默认编辑器 #
 * 终端输入:
 ```
 $ echo export EDITOR=/usr/bin/vim >> ~/.bashrc
@@ -355,7 +396,7 @@ vim.basic是一个完整版的vim，但没有图像界面
 vim.tiny是一个vim的缩减版
 ```
 
-## Add user to a group ##
+# Add user to a group #
 How to add a user to a group
 * add user to "sudo" group
 ```
@@ -376,7 +417,7 @@ $ id -Gn
 junwei-zhang adm disk dialout sudo fuse admin
 ```
 
-## Keep the env for sudo ##
+# Keep the env for sudo #
 如何保留"sudo command"时环境变量?
 * Modify the /etc/sudoer
 ```
@@ -387,7 +428,7 @@ $ sudo visudo
                     Add the env variant you want
 ```
 
-## sudo echo ##
+# sudo echo #
 * This won't work:
 ```
     sudo echo "Text I want to write" > /path/to/file
@@ -409,7 +450,7 @@ echo "Text I want to write" | sudo tee -a /path/to/file > /dev/null
     sudo sh -c 'echo "Text I want to write" >> /path/to/file'
 ```
 
-## sudo不需要输入密码 ##
+# sudo不需要输入密码 #
 ```
 (1)
 $ su -
@@ -448,7 +489,7 @@ root    ALL=(ALL:ALL) ALL
 $ exit
 ```
 
-## Eclipse setup ##
+# Eclipse setup #
 * Download JDK
 ```
 $ sudo apt-get install openjdk-7-jdk
@@ -461,7 +502,7 @@ OpenJDK Runtime Environment (IcedTea 2.3.10) (7u25-2.3.10-1ubuntu0.12.04.2)
 OpenJDK Server VM (build 23.7-b01, mixed mode)
 ```
 
-## Download Eclipse
+# Download Eclipse
 * [eclipse kepler sr1](http://www.eclipse.org/downloads/packages/eclipse-ide-cc-developers/keplersr1)
 ```
 $ sudo tar xvf eclipse-cpp-kepler-SR1-linux-gtk.tar.gz -C /opt/
@@ -471,7 +512,7 @@ $ sudo tar xvf eclipse-cpp-kepler-SR1-linux-gtk.tar.gz -C /opt/
 $ /opt/eclipse/eclipse &
 ```
 
-## Wine for windows program ##
+# Wine for windows program #
 - Open "Ubuntu Software Center"
 - search "wine"
 - install "wine Windows Program loader"
@@ -479,7 +520,7 @@ $ /opt/eclipse/eclipse &
 - Click right button on it
 - select "open with wine Windows Program loader"
 
-## Boot Ubuntu from terminal ##
+# Boot Ubuntu from terminal #
 (Ubuntu14.04: referring to http://www.htpcbeginner.com/force-ubuntu-boot-into-terminal/)
 * Update the grub default settings
 ```
@@ -498,7 +539,7 @@ $ sudo update-grub
 * If you want to revert the changes, you can recover the /etc/default/grub and update the grub.
 * If you only want to use the terminal, you can press "Ctrl+Alt+F1"~"Ctrl+Alt+F6". Then "Ctrl+Alt+F7" will take you back to the GUI desktop.
 
-## Boot Ubuntu without the specific module installed automatically ##
+# Boot Ubuntu without the specific module installed automatically #
 ```
 # echo "blacklist DRV_NAME" > /etc/modprobe.d/blacklist.conf
 
@@ -506,7 +547,7 @@ e.g.
 # echo "blacklist amdgpu" > /etc/modprobe.d/blacklist.conf
 ```
 
-## Networking setting
+# Networking setting
 * Modify host name
   * forever
 ```
@@ -716,7 +757,7 @@ $ mount -t nfs 192.168.xx.xx:/path-to-share /path-to-mount
 ```
     * 在共享目录下创建一个文件，看看另外一端能不能看到。
 
-## Local networking setting RNDIS(Ubuntu) ##
+# Local networking setting RNDIS(Ubuntu) #
 * Remote Network Device Interface Specification.
 * 它是由微软制定的规范,Linux也兼容这个规范. 通过USB的Gadget,将device虚拟为一个网卡,以实现本地网络的连接.因此,IP必须为192.168.x.x的范围.
 * Host PC
@@ -761,7 +802,7 @@ ifconfig usb0 192.168.1.3 up
 * 注意:
   - 如果,host同时还在另一个local ip段内,如:192.168.0.123, 那么设置ip时,不要与它处于同一个ip段,否则,不能成功连接.
 
-## Networking setting (CentOS) ##
+# Networking setting (CentOS) #
 以下内容适用于CentOS等Redhat的Linux系统.
 *  CentOS basic setings
   * modify host name
