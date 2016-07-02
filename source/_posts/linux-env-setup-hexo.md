@@ -1,10 +1,14 @@
 ---
 title: How to setup Hexo
 date: 2016-05-22 22:41:01
+categories: linux-env
 tags:
-  - linux-env
   - hexo
 ---
+
+This document describes how to setup hexo on your system.
+
+<!-- more -->
 
 # Ubuntu 16.04
 

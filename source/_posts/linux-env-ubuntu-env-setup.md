@@ -1,12 +1,15 @@
 ---
 title: Ubuntu系统环境那些事
 date: 2016-06-29 22:30:00
+categories: linux-env
 tags:
-  - linux-env
   - ubuntu
 ---
 
 居家旅行必备的设置，以下内容都是基于Ubuntu12.04系统的.
+(Updated for Ubuntu14.04)
+
+<!-- more -->
 
 ## proxy settings
 
