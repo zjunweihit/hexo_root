@@ -3,6 +3,7 @@ title: minicom的多彩世界
 date: 2016-07-02 21:45:06
 categories: linux-env
 tags:
+  - linux-env-misc
 ---
 
 Set up minicom to look into the debug machine
