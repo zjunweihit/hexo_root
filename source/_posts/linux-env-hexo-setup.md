@@ -3,7 +3,7 @@ title: How to setup Hexo
 date: 2016-05-22 22:41:01
 categories: linux-env
 tags:
-  - hexo
+  - linux-env-misc
 ---
 
 This document describes how to setup hexo on your system.
