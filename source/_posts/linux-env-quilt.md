@@ -3,7 +3,7 @@ title: 玩转quilt
 date: 2016-07-02 21:25:47
 categories: linux-env
 tags:
-  - quilt
+  - SCM
 ---
 
 Create the patch freely

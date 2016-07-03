@@ -3,7 +3,7 @@ title: 玩转git
 date: 2016-07-02 20:37:32
 categories: linux-env
 tags:
-  - git
+  - SCM
 ---
 
 Let's play with git ^^

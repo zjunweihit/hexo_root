@@ -1,9 +1,9 @@
 ---
-title: CVS
+title: 玩转CVS
 date: 2016-07-02 21:37:40
 categories: linux-env
 tags:
-  - cvs
+  - SCM
 ---
 
 Manage the code and file with CVS
