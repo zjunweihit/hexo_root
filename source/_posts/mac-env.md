@@ -2,7 +2,7 @@
 title: Mac 环境那些事
 date: 2016-07-02 12:59:34
 tags:
-  - mac-env
+  - linux-env-misc
 ---
 
 This doc describes the MAC environment.
