@@ -8,7 +8,8 @@ tags:
   - linux-dev-misc
 ---
 
-List the basic graphics knowledge
+List the basic graphics knowledge.
+Mainly refer to en.wikipedia.org.
 
 <!--more-->
 
@@ -19,7 +20,7 @@ Models may be created automatically or manually. The manual modeling process of 
 
 3D modeling software is a class of 3D computer graphics software used to produce 3D models. Individual programs of this class are called modeling applications or modelers.
 
-> Referrence
+> Reference
   - [3D modeling](https://en.wikipedia.org/wiki/3D_modeling)
 
 # 3D Rendering
@@ -28,7 +29,7 @@ Models may be created automatically or manually. The manual modeling process of 
 ## Rendering methods
 **Rendering is the final process of creating the actual 2D image or animation from the prepared scene.** This can be compared to taking a photo or filming the scene after the setup is finished in real life. Several different, and often specialized, rendering methods have been developed. These range from the distinctly non-realistic wireframe rendering through polygon-based rendering, to more advanced techniques such as: scanline rendering, ray tracing, or radiosity. Rendering may take from fractions of a second to days for a single image/frame. In general, different methods are better suited for either photo-realistic rendering, or real-time rendering.
 
-> Referrence
+> Reference
   - [3D rendering](https://en.wikipedia.org/wiki/3D_rendering)
 
 # Graphics pipeline
@@ -36,3 +37,13 @@ In 3D computer graphics, the **graphics pipeline** or **rendering pipeline** ref
 
 > Reference
   - [Graphics pipeline](https://en.wikipedia.org/wiki/Graphics_pipeline)
+
+# Shader
+In the field of computer graphics, a shader is a computer program that is used to do shading: the production of appropriate levels of color within an image, or, in the modern era, also to produce special effects or do video post-processing. A definition in layman's terms might be given as "a program that tells a computer how to draw something in a specific and unique way".
+
+Shaders calculate rendering effects on graphics hardware with a high degree of flexibility. Most shaders are coded for a graphics processing unit (GPU), though this is not a strict requirement. Shading languages are usually used to program the programmable GPU rendering pipeline, which has mostly superseded the fixed-function pipeline that allowed only common geometry transformation and pixel-shading functions; with shaders, customized effects can be used. The position, hue, saturation, brightness, and contrast of all pixels, vertices, or textures used to construct a final image can be altered on the fly, using algorithms defined in the shader, and can be modified by external variables or textures introduced by the program calling the shader.
+
+Shaders are used widely in cinema postprocessing, computer-generated imagery, and video games to produce a seemingly infinite range of effects. Beyond just simple lighting models, more complex uses include altering the hue, saturation, brightness and/or contrast of an image, producing blur, light bloom, volumetric lighting, normal mapping for depth effects, bokeh, cel shading, posterization, bump mapping, distortion, chroma keying (so-called "bluescreen/ greenscreen" effects), edge detection and motion detection, psychedelic effects, and a wide range of others.
+
+> Reference
+  - [Shader](https://en.wikipedia.org/wiki/Shader)
