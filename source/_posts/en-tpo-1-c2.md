@@ -23,37 +23,23 @@ Listen to part of conversation between a student and his professor.
 - He introduced the Greek and Roman mythology as a way of explaning. Like, you know, how like `Jupiter`'s biggest planet, right, and how Jupiter was the name the king of the gods in Roman mythology, right? So since Jupiter, the planet, is the largest planet in solar system, it's like the king of planet, like Jupiter was the king of all the gods.
 * Oh, Mathew, that's a great example.
 - Yeah. And each stdudent chose a planet and then did reserch on it to write a report and make a presentation. They went to the libary to do the research and then they made the presentation about the planet they chose.
+* So in one science unit, in which the focus was astronomy, the students also learned about the literal of Greek and Roman mythology, used research skill in library, wrote a report and practiced their oral presentation skill.
+- Exactly! He used this one topic to teach third-grades all that stuff. How do you use these books in the library, to write reports and even how to speak in public. Plus they had great time doing it.
+* You know, Mathew, this is just what we've been talking about in the class. I'sure everyone could learn something from your experience. You know, Mathew, I'd love you to talk about this astronomy unit in class on Wednesday.
+- Really? Hmmm, cause I don't really think I'll have any time to write my paper `by then`.
+* Oh You won't need to write anything new just yet. For wednesday, use the class observation notes and explain the things we've discussed today.
+- OK, that sounds all right.
 
 
 
 
+---
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# Word and expressions
 
 * come in: 进来；到达；流行起来
 * approaches to: (处理问题、完成任务的)方法，方式；手段；步骤；态度
 * interdisciplinary: adj. 各学科间的；跨学科的
 * mythology: n. 神话；神话学；神话集
 * Jupiter: 宙斯，木星
-
-
-
+* by then: 到那时
