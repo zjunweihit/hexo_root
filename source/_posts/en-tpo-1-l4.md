@@ -33,8 +33,11 @@ Uh-ha, any `contrast`, Olympic marmots? what about them?
 Well, they live together as a falimy and they take care of their young until they are at least two years old. They're really friendly with each other. And what I really like is that they even have greeting `ceremonies`.
 And they are `not at all` aggressive and territorial like the Easten marmots. So they social behavior is so different from Eaten marmots because of the climates where they live?
 That seems so bizarre.
-
-
+Well, the Olympic marmots `inhabit` `meadows` high Olympic Montains where the weather conditions are much harsher. So there is a lot of wind and snow.
+The growing season only lasts two to three months. So in that much shorter period of time all the Olympic marmots male and female, eat, play and `nurture` the young together.
+Because the climate is so harsh, cooperation inscreases the survival rate of Olympic marmots.
+They keep their young at home untill they are physically able to survive on their own.
+That could explain why the social behavior of Olympic marmots is so unlike that of the Easten marmots.
 
 
 # Word and Expression
@@ -58,6 +61,9 @@ That seems so bizarre.
   * in contrast with: 与…形成对比；与…相比
 * ceremony: n. 典礼，仪式；礼节
 * bizarre: adj. 奇异的（指态度，容貌，款式等）
+* inhabit: 栖息；居住于；占据
+* meadow: n. 草地；牧场
+* nurture: vt. 养育；鼓励；培植
 
 
 ---
