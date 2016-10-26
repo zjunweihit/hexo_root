@@ -56,6 +56,7 @@ excess: 额外的，附加的
 ```
 无效的，徒劳的
 ```
+* perception: n. 知觉；[生理] 感觉；看法；
 
 
 
@@ -72,6 +73,14 @@ excess: 额外的，附加的
 * same, identical
 * should, ought to
 * apart from that, beyond that, except, besides,
+* brief, concise
+* consent(n.), agree
+* propose, advice, suggest
+* catalog, contents
+* gratitude, appreciation, thanks
+* operational, working
+* likewise, in the same way
+* in my opinion, from my perspective
 
 
 ---
