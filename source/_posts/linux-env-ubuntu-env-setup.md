@@ -529,6 +529,24 @@ $ sudo vi /etc/default/grub
 - GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
 + GRUB_CMDLINE_LINUX_DEFAULT="text"
 
+# Boot Ubuntu from specific kernel #
+* grep the menu entry
+```
+cat /boot/grub/grub.cfg | grep menuentry
+```
+* set default option in grub, entering the secondary option by ">"
+```
+grub-set-default 'Advanced options for Ubuntu>Ubuntu, with Linux 4.7.0-custom'
+```
+* update grub
+```
+vi /etc/default/grub
+
++ GRUB_DEFAULT=save
+
+update-grub
+```
+
 # Uncomment to disable graphical terminal (grub-pc only)
 - #GRUB_TERMINAL=console
 + GRUB_TERMINAL=console
