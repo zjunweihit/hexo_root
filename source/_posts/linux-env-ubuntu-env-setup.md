@@ -44,13 +44,13 @@ I have created a Ubuntu13.04 installer in partition 1 of a USB hard disk success
 (2016/07/02, 已经不用这种方法了)
 * Usually there are 2 ways to setup by hardware.
 * wubi安装(这可不是五笔啊)
-  # get wubi.exe from ubuntu*.iso
-  # wubi.exe --force-wubi
-  # 因为12.04里，windows内安装的选项被禁用了。
+  - get wubi.exe from ubuntu*.iso
+  - wubi.exe --force-wubi
+  - 因为12.04里，windows内安装的选项被禁用了。
 * non-wubi
   * refer to
-  * [[http://wenku.baidu.com/view/bad8fe01e87101f69e3195a6.html|setup with easybcd_1]]
-  * [[http://wenku.baidu.com/view/ef1e8b210722192e4536f615.html|setup with easybcd_2]]
+    - [setup with easybcd_1](http://wenku.baidu.com/view/bad8fe01e87101f69e3195a6.html)
+    - [setup with esaybcd_2](http://wenku.baidu.com/view/ef1e8b210722192e4536f615.html)
 
 # proxy settings
 
@@ -501,13 +501,12 @@ java version "1.7.0_25"
 OpenJDK Runtime Environment (IcedTea 2.3.10) (7u25-2.3.10-1ubuntu0.12.04.2)
 OpenJDK Server VM (build 23.7-b01, mixed mode)
 ```
-
-# Download Eclipse
-* [eclipse kepler sr1](http://www.eclipse.org/downloads/packages/eclipse-ide-cc-developers/keplersr1)
+* Download Eclipse
+  * [eclipse kepler sr1](http://www.eclipse.org/downloads/packages/eclipse-ide-cc-developers/keplersr1)
 ```
 $ sudo tar xvf eclipse-cpp-kepler-SR1-linux-gtk.tar.gz -C /opt/
 ```
-* Run eclipse
+  * Run eclipse
 ```
 $ /opt/eclipse/eclipse &
 ```
@@ -528,6 +527,7 @@ $ sudo vi /etc/default/grub
 
 - GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
 + GRUB_CMDLINE_LINUX_DEFAULT="text"
+```
 
 # Boot Ubuntu from specific kernel #
 * grep the menu entry
@@ -573,6 +573,7 @@ memmap=1G\$3G
   * [kernel-parameters.txt](https://www.kernel.org/doc/Documentation/kernel-parameters.txt)
 
 # Uncomment to disable graphical terminal (grub-pc only)
+```
 - #GRUB_TERMINAL=console
 + GRUB_TERMINAL=console
 
