@@ -547,6 +547,31 @@ vi /etc/default/grub
 update-grub
 ```
 
+# Set memmap in GRUB #
+* `$` needs escaping symbol `\` both in default grub and grub.cfg
+* default grub
+```
+$ sudo vi /etc/default/grub
+
+- GRUB_CMDLINE_LINUX=""
++ GRUB_CMDLINE_LINUX="memmap=1G\\\$3G"
+
+$ update-grub
+the /boot/grub/grub.cfg will be updated accordingly
+```
+* grub.cfg, following will be appended to the command line
+```
+memmap=1G\$3G
+```
+* Verify after reboot
+```
+# dmesg | grep user
+[    0.000000] user: [mem 0x00000000c0000000-0x00000000ffffffff] reserved
+```
+* referring to
+  * [[PATCH] x86: e820: fix memmap kernel boot parameter](http://www.gossamer-threads.com/lists/linux/kernel/1774749)
+  * [kernel-parameters.txt](https://www.kernel.org/doc/Documentation/kernel-parameters.txt)
+
 # Uncomment to disable graphical terminal (grub-pc only)
 - #GRUB_TERMINAL=console
 + GRUB_TERMINAL=console
