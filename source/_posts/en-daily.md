@@ -57,6 +57,10 @@ excess: 额外的，附加的
 无效的，徒劳的
 ```
 * perception: n. 知觉；[生理] 感觉；看法；
+* stipulate: 规定；保证
+  - We stipulated at 5 o'clock
+* workout: 锻炼
+* trifle: 小事，少量
 
 
 
@@ -66,9 +70,9 @@ excess: 额外的，附加的
 * factor, element, aspect, role, part
 * development, advancement, progression, evolution
 * pecular, extraordinary
-* preceding, previous
+* preceding, previous, former
 * exceedingly, extremely
-* transient,短暂的
+* transient,短暂的, temporary,
 * happy, delighted
 * same, identical
 * should, ought to
@@ -81,6 +85,10 @@ excess: 额外的，附加的
 * operational, working
 * likewise, in the same way
 * in my opinion, from my perspective
+* too, as well, likewise
+* on the contrary(正相反), contrast(对比)
+* prevalent, polular, prevail
+* enormous, huge, large, big
 
 
 ---
@@ -99,3 +107,5 @@ Given these findings, it is perhaps no wonder that the job market is still so po
 * pay off: 回报
 * contend with: 对付；与…作斗争
   * contend with the problem
+* be on your toes: 保持警觉
+* go through with sth: 完成，实行；把…进行到底
