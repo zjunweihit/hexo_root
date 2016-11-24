@@ -41,6 +41,7 @@ man less
   - git XX == git YY_ZZ_UU
 ```
 git config --global alias.ci commit
+git config --global alias.cia 'commit --amend'
 git config --global alias.rs reset
 git config --global alias.rh 'reset --hard'
 git config --global alias.rp 'reset HEAD^'
@@ -48,6 +49,10 @@ git config --global alias.st status
 git config --global alias.br branch
 git config --global alias.co checkout
 git config --global alias.lo 'log --oneline'
+git config --global alias.cl 'clean -df'
+git config --global alias.pr 'pull --rebase'
+git config --global alias.rbc 'rebase --continue'
+git config --global alias.rb rebase
 ```
 * git config core.autocrlf true
 ```
