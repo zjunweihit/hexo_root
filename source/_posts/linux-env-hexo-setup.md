@@ -39,6 +39,28 @@ hexo --help
 npm install hexo-deployer-git --save
 ```
 
+# Mac
+
+* Install nodejs and npm
+  * get from [hexo--搭建](http://www.jianshu.com/p/a2023a601ceb)
+* Update the source for npm, appeding below to `~/.npmrc`
+```
+registry = https://registry.npm.taobao.org
+```
+* Install hexo
+```
+sudo npm install -g hexo
+```
+* Test hexo
+```
+hexo --help
+```
+* Install hexo git plugin
+```
+cd folder where executes "hexo init"
+npm install hexo-deployer-git --save
+```
+
 # How to use hexo
 
 * Initialization
