@@ -6,7 +6,7 @@ tags:
   - linux-env-misc
 ---
 
-This document describes how to setup hexo on your system.
+This document describes how to setup openconnect on your system.
 
 <!-- more -->
 
@@ -44,3 +44,39 @@ sudo openconnect --token-mode=rsa -u <username> <vpn-server>
   - [infradead.org](http://www.infradead.org/openconnect/index.html)
   - [macosx install openconnect with libstoken support](https://www.techietek.com/2016/01/19/macosx-install-openconnect-with-libstoken-support/)
 
+# Ubuntu
+* Get the stdid file
+* Install stoken (https://sourceforge.net/p/stoken/wiki/Home/)
+  - Ubuntu16.04(apt-get)
+  - Ubuntu14.04(the stoken at 14.04 is too old, so install it from ppa)
+```
+sudo -s
+apt-get install python-software-properties
+add-apt-repository ppa:cernekee/ppa
+apt-get update
+apt-get install stoken libstoken-dev
+```
+* Import previous token ID
+```
+stoken import --file mytoken.sdtid
+```
+* Input init password or PIN and new PIN
+* Cache PIN in ~/.stokenrc
+```
+stoken setpin
+```
+* Show code with either
+```
+stoken tokencode
+stoken-gui
+stoken-gui --small
+```
+* Install VPN client
+```
+apt-get install network-manager-openconnect-gnome
+```
+* Configure VPN in NetworkManager
+```
+Gateway: sha-vpn.abc.com
+Token Mode: RSA SecurID - read from ~/.stokenrc
+```
