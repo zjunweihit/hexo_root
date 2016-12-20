@@ -276,6 +276,15 @@ $ git commit .
 ```
 $ git rebase --continue
 ```
+1. git pull
+  * set upstream by default
+```
+git pull <remote> <branch>
+```
+  * If you wish to set tracking information for this branch you can do so with:
+```
+git branch --set-upstream-to=<remote>/<branch> <local_branch>
+```
 1. fix merge when git pull
   * 有时候,当运行git pull的时候,会出现merge failure的信息.这时就需要我们手动来merge这些操作.通常,是关于patches/serial文件的.
   * 查看哪些文件需要更新或合并.
