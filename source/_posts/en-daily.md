@@ -61,6 +61,11 @@ excess: 额外的，附加的
   - We stipulated at 5 o'clock
 * workout: 锻炼
 * trifle: 小事，少量
+* breadth, width, length
+  * breadth = width: 事物的宽度
+  * breadth　还可指抽象事物宽度，如breadth on mind, 宽广的胸襟
+* accord:(n.) a formal or official agreement
+  * consent, agreement
 
 
 
@@ -70,7 +75,7 @@ excess: 额外的，附加的
 * factor, element, aspect, role, part
 * development, advancement, progression, evolution
 * pecular, extraordinary
-* preceding, previous, former
+* preceding, previous, former, ahead of
 * exceedingly, extremely
 * transient,短暂的, temporary,
 * happy, delighted
@@ -89,6 +94,12 @@ excess: 额外的，附加的
 * on the contrary(正相反), contrast(对比)
 * prevalent, polular, prevail
 * enormous, huge, large, big
+* like, resemble(v.), similar
+
+---
+# likeness
+* transition: n. 过渡, 转变(e.g.手机的发展过程）
+* transient: adj. 短暂的，转瞬即逝的，n.过往旅客，候鸟
 
 
 ---
@@ -109,3 +120,5 @@ Given these findings, it is perhaps no wonder that the job market is still so po
   * contend with the problem
 * be on your toes: 保持警觉
 * go through with sth: 完成，实行；把…进行到底
+* as of: 直至；在…时；到…时候为止
+* be comprised of, consist of, include, be made up of: 包含，构成
