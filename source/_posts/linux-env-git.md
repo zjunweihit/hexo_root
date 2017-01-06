@@ -285,6 +285,11 @@ git pull <remote> <branch>
 ```
 git branch --set-upstream-to=<remote>/<branch> <local_branch>
 ```
+1. git fetch
+  * 如果remote-tracking branches已经删除了一些branch,那么本地也可以删除相应的branch
+```
+git fetch -p
+```
 1. fix merge when git pull
   * 有时候,当运行git pull的时候,会出现merge failure的信息.这时就需要我们手动来merge这些操作.通常,是关于patches/serial文件的.
   * 查看哪些文件需要更新或合并.
