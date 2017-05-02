@@ -1081,3 +1081,13 @@ ip  [选项]  操作对象{link|addr|route...}
 检查网关是否正确:          # ping -c 3 192.168.0.254(网关IP地址)
 检查外部连通性:            # ping -c 3 www.google.com.hk
 ```
+
+# cifs mounting #
+* mount cifs as usual nfs for kernel < 3.8, but the newer Ubuntu 16.04 adopts different way
+```
+The default in mainline kernel versions prior to v3.8 was sec=ntlm. In v3.8, the default was changed to sec=ntlmssp.
+
+$ sudo mount.cifs ubuntu-shared/ /mnt -o user=admin,sec=ntlm
+```
+> Reference
+  - [mount error(13): Permission denied](https://askubuntu.com/questions/337128/mount-error13-permission-denied)
