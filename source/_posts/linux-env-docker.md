@@ -183,4 +183,8 @@ hello from zjunwei
 * [docker home](https://www.docker.com)
 * [docker docs](https://docs.docker.com)
 * [10张图带你深入理解Docker容器和镜像](http://dockone.io/article/783)
+* [Docker: Create Image from Container](http://blog.csdn.net/wxqee/article/details/52081866)
+* [如何创建自己的docker image并上传到DockerHub上](http://www.cnblogs.com/shihuc/p/5152949.html)
+* [Docker入门教程：15个Docker进阶命令](http://cloud.51cto.com/art/201412/462910.htm)
+* [01-Docker新手入门初见篇](https://segmentfault.com/a/1190000007554125)
 
