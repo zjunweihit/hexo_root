@@ -43,6 +43,11 @@ sudo openconnect --token-mode=rsa -u <username> <vpn-server>
 * Reference
   - [infradead.org](http://www.infradead.org/openconnect/index.html)
   - [macosx install openconnect with libstoken support](https://www.techietek.com/2016/01/19/macosx-install-openconnect-with-libstoken-support/)
+* `If you upgrade the system to sierra 10.12, need to re-install all above things`
+  - `tuntap`: only supports package installation for Yosemite 10.10 now.
+    - So download the release package and install manually
+    - [Download tuntap_20150118](http://tuntaposx.sourceforge.net/download.xhtml)
+  - `others`: brew install
 
 # Ubuntu
 * Get the stdid file
