@@ -17,6 +17,15 @@ sudo scutil --set HostName MacBookPro
 ```
 sudo scutil --set ComputerName MacBookPro
 ```
+* Install homebrew [homebrew](https://brew.sh)
+```
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+brew update
+brew search "name"
+brew install "name"
+brew remove "name"
+```
 
 # shortcut
 * screenshot
@@ -67,9 +76,9 @@ http://localhost:4000
 # Upgrade to macOS sierra
 * 好像新的macOS与老的系统兼容不太好，好多软件都要重新安装，而且安装方法也有些不太一样。
 * `openconnect`，具体参考openconnect安装更新页面。
-* `brewhome`
+* `homebrew`
   * re-install from master branch(previously stable branch), in sierra, install brewhome from master branch by default.
-  * remove old brewhome
+  * remove old homebrew
     - ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)"
   * install from master by default in macOS
     - /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -85,5 +94,3 @@ sudo chown -R $(whoami) /usr/local  (if run into permission)
 ```
 xcode-select - -reset; xcode-select - -install
 ```
-
-
