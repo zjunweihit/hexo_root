@@ -26,7 +26,7 @@ command + shift + 3
 ```
   * screenshot for self-defined area
 ```
-command + shift + 3
+command + shift + 4
 ```
 
 # Jekyll setup
@@ -63,4 +63,27 @@ http://localhost:4000
 ## reference
 * [Mac下Jekyll安装](http://www.jianshu.com/p/07064eb79740)
 * [CocoaPods安装经历](http://blog.csdn.net/th_gsb/article/details/49178083)
+
+# Upgrade to macOS sierra
+* 好像新的macOS与老的系统兼容不太好，好多软件都要重新安装，而且安装方法也有些不太一样。
+* `openconnect`，具体参考openconnect安装更新页面。
+* `brewhome`
+  * re-install from master branch(previously stable branch), in sierra, install brewhome from master branch by default.
+  * remove old brewhome
+    - ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)"
+  * install from master by default in macOS
+    - /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  * reference: [brew home page](https://brew.sh)
+  * switch branch manually, referring to [macOS sierra brew权限问题](https://segmentfault.com/q/1010000007194095)
+```
+cd "$(brew —repo)" && git fetch && git reset —hard origin/master && brew update
+sudo chown -R $(whoami) /usr/local  (if run into permission)
+```
+* `xcode`
+  * 升级后很多软件不好用，e.g. git找不到路径, 编译openconnect找不到库
+  * reset/install xcode [mac更新系统后Git不能用，提示missing xcrun](http://blog.csdn.net/qq_23089525/article/details/52789005)
+```
+xcode-select - -reset; xcode-select - -install
+```
+
 
