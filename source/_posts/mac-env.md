@@ -26,6 +26,9 @@ brew search "name"
 brew install "name"
 brew remove "name"
 ```
+* Install Microsoft Remote Desktop for Mac [Get started with Remote Desktop on Mac](https://docs.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/remote-desktop-mac)
+  - Cannot download from Apple Store(CN)
+  - Download the [Microsoft Remote Desktop For Mac Beta](https://rink.hockeyapp.net/apps/5e0c144289a51fca2d3bfa39ce7f2b06/) directly(Beta)
 
 # shortcut
 * screenshot
@@ -56,7 +59,7 @@ gem sources -l
 
 https://ruby.taobao.org/
 ```
-* Build the html files in _site directory
+* Build the html files in site directory
 ```
 jekyll build
 ```
@@ -94,3 +97,4 @@ sudo chown -R $(whoami) /usr/local  (if run into permission)
 ```
 xcode-select - -reset; xcode-select - -install
 ```
+
