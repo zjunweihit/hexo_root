@@ -1091,3 +1091,17 @@ $ sudo mount.cifs ubuntu-shared/ /mnt -o user=admin,sec=ntlm
 ```
 > Reference
   - [mount error(13): Permission denied](https://askubuntu.com/questions/337128/mount-error13-permission-denied)
+
+# ldconfig #
+* check lib loading order
+```
+ldconfig -p
+```
+* after install lib in system, load the lib in cache file
+```
+sudo ldconfig
+```
+* config setting, loaded by order(number, character)
+```
+/etc/ld.so.conf.d
+```
