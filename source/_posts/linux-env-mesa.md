@@ -32,7 +32,7 @@ sudo make install
 # Mesa
 * Install dependent packages
 ```
-apt install bison flex python-mako libpthread-stubs0-dev x11proto-gl-dev x11proto-dri2-dev x11proto-dri2-dev x11proto-present-dev libdrm-dev libdrm-amdgpu1 libdrm2 xcb libxcb-dri3-0 libxcb-dri3-dev libxcb-present0 libxcb-present-dev libxcb-sync1 libxcb-sync-dev libxshmfence1 libxshmfence-dev libx11-dev libxext-dev libxdamage-dev libxfixes-dev libx11-xcb-dev libxcb-glx0-dev libxcb-dri2-0-dev libudev-dev libexpat1-dev libomxil-bellagio-dev libelf-dev automake zlib1g-dev
+apt install bison flex python-mako libpthread-stubs0-dev x11proto-gl-dev x11proto-dri2-dev x11proto-dri3-dev x11proto-present-dev libdrm-dev libdrm-amdgpu1 libdrm2 xcb libxcb-dri3-0 libxcb-dri3-dev libxcb-present0 libxcb-present-dev libxcb-sync1 libxcb-sync-dev libxshmfence1 libxshmfence-dev libx11-dev libxext-dev libxdamage-dev libxfixes-dev libx11-xcb-dev libxcb-glx0-dev libxcb-dri2-0-dev libudev-dev libexpat1-dev libomxil-bellagio-dev libelf-dev automake zlib1g-dev
 ```
 * Build
 ```
