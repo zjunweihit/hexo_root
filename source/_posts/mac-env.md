@@ -9,15 +9,15 @@ This doc describes the MAC environment.
 
 <!--more-->
 
-* Modify the hostname
+# Modify the hostname
 ```
 sudo scutil --set HostName MacBookPro
 ```
-* Set the computer name
+# Set the computer name
 ```
 sudo scutil --set ComputerName MacBookPro
 ```
-* Install homebrew [homebrew](https://brew.sh)
+# Install homebrew [homebrew](https://brew.sh)
 ```
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
@@ -30,13 +30,12 @@ brew remove "name"
   - Cannot download from Apple Store(CN)
   - Download the [Microsoft Remote Desktop For Mac Beta](https://rink.hockeyapp.net/apps/5e0c144289a51fca2d3bfa39ce7f2b06/) directly(Beta)
 
-# shortcut
-* screenshot
-  * fullscreen
+# screenshot
+* fullscreen
 ```
 command + shift + 3
 ```
-  * screenshot for self-defined area
+* screenshot for self-defined area
 ```
 command + shift + 4
 ```
