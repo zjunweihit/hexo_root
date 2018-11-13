@@ -17,6 +17,17 @@ Go to make build easier.
   - Adds an executable target called `<name>` to be built from the source files listed in the command invocation.
   - The `<name>` corresponds to the logical target name and must be globally unique within a project.
 ```
+* c++11 support
+  - add_compile_options() will add the options to gcc and g++
+  - set(CMAKE_CXX_FLAGS) works for g++ only
+```
+if(CMAKE_COMPILER_IS_GNUCXX)
+    # add_compile_options(-std=c++11)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+    message(STATUS "optional:-std=c++11")
+endif(CMAKE_COMPILER_IS_GNUCXX)
+```
+
 # single source file
 add_executable(stest single_list.cpp)
 
