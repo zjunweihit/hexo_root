@@ -130,3 +130,4 @@ $ cat test_detail.xml
 
 * https://www.cnblogs.com/Jessica-jie/p/6704388.html
 * https://www.cnblogs.com/hcu5555/archive/2015/04/30/4468847.html
+* https://www.cnblogs.com/coderzh/archive/2009/04/06/1426755.html
