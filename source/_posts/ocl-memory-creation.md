@@ -1,11 +1,10 @@
 ---
-title: OpenCL> memory creation
+title: OpenCL memory creation
 date: 2017-12-26 22:54:31
 categories:
   - Compute
 tags:
   - OpenCL
-  - Compute
 ---
 
 How to create memory on OpenCL device
@@ -22,7 +21,7 @@ How to create memory on OpenCL device
   - Host could access the memory by clEnqueueMapBuffer()
   - If set it only, `host_ptr` must be NULL.
   - If set it with CL_MEM_COPY_HOST_PTR, `host_ptr` must be non-NULL.
-  - *Invalid* to use CL_MEM_USE_HOST_PTR and CL_MEM_ALLOC_HOST_PTR.
+  - **Invalid** to use CL_MEM_USE_HOST_PTR and CL_MEM_ALLOC_HOST_PTR.
 * CL_MEM_COPY_HOST_PTR
   - Copy memory from host to device, `host_ptr` must be non-NULL.
   - The `host_ptr` is different from copied memory on device
