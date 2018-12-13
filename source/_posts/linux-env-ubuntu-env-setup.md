@@ -396,6 +396,18 @@ vim.basic是一个完整版的vim，但没有图像界面
 vim.tiny是一个vim的缩减版
 ```
 
+# fix: override cpp setting #
+
+Ubuntu 18.04, vim default setting has overrided ~/.vim/ftplugin/cpp.vim.
+```
+$ ls /usr/share/vim/vim80/ftplugin/cpp.vim
+```
+
+comment the last line:
+```
+"runtime! ftplugin/c.vim ftplugin/c_*.vim ftplugin/c/*.vim
+```
+
 # Add user to a group #
 How to add a user to a group
 * add user to "sudo" group
