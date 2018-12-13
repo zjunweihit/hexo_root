@@ -2,9 +2,10 @@
 title: OpenCL> memory creation
 date: 2017-12-26 22:54:31
 categories:
-  - Parallel Compute
+  - Compute
 tags:
   - OpenCL
+  - Compute
 ---
 
 How to create memory on OpenCL device
