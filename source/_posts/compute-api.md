@@ -23,7 +23,7 @@ Term                    | CUDA                  | HIP                   | OpenCL
                         | block                 | block                 | work-group
                         | thread                | thread                | work-item
                         | warp                  | warp                  | sub-group
-bgcolor=color           |                       |                       |
+                        |                       |                       |
 **Grid dim**            | gridDim.x             | hipGridDim_x          | get_global_size(0)
 **Block dim**           | blockDim.x            | hipBlockDim_x         | get_local_size(0)
 **Block index**         | blockIdx.x            | hipBlockIdx_x         | get_group_id(0)
