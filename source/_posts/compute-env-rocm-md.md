@@ -39,6 +39,7 @@ sudo apt install rocm-libs miopen-hip cxlactivitylogger
 * Remove the ROCm
 ```
 sudo apt autoremove rocm-dkms
+sudo apt autoremove rocm-libs miopen-hip cxlactivitylogger
 ```
 
 # Reference
