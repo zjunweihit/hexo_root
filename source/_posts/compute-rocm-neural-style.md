@@ -78,7 +78,7 @@ sudo dpkg -i *.deb
 sudo apt-get install libfreeimage3 libfreeimage-dev
 ```
 
-# Install TensorFlow CUDA
+# Install TensorFlow CUDA (Optional)
 * Install tensorflow-gpu
 ```
 pip3 install tensorflow-gpu
@@ -127,7 +127,12 @@ ImportError: libcublas.so.9.0: cannot open shared object file: No such file or d
 ```
 No module named 'tensorflow.python.framework')
 ```
-* Fix: install tensorflow-gpu
+* Fix: re-install any of tensorflow, as it's a common lib for all tensorflow backend.
+```
+pip3 install tensorflow
+pip3 install tensorflow-gpu
+pip3 install tensorflow-rocm
+```
 
 > error: import tensorflow
 ```
