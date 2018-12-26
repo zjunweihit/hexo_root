@@ -8,8 +8,7 @@ tags:
   - ROCm
 ---
 
-How to install TensorFlow.
-(Verified in Ubuntu 18.04)
+How to install TensorFlow. (Verified in Ubuntu 18.04)
 
 <!--more-->
 # Software in Ubuntu 18.04
