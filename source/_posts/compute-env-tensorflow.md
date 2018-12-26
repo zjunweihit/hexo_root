@@ -84,6 +84,10 @@ sudo ./cuda_9.0.176_384.81_linux.run -toolkit -samples -silent -override
 
 lrwxrwxrwx 1 root root 19 Dec 25 13:10 /usr/local/cuda -> /usr/local/cuda-9.0
 ```
+  - Remove cuda 9.0 toolkit
+```
+sudo /usr/local/cuda/bin/uninstall_cuda_9.0.pl
+```
 * Set environment variables
 ```
 export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}
