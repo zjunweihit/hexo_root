@@ -1117,3 +1117,8 @@ sudo ldconfig
 ```
 /etc/ld.so.conf.d
 ```
+# locate #
+Update locate database, which will be updated daily by cron(man updatedb)
+```
+sudo updatedb
+```
