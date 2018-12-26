@@ -166,6 +166,7 @@ Free memory: 7.73GiB
 >>> sess.run(hello)
 b'Hello, TensorFlow'
 ```
+* CUDA(Not verified yet)
 
 # Issues
 > error: import tensorflow
