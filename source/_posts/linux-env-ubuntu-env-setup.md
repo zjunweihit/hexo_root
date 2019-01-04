@@ -1122,3 +1122,27 @@ Update locate database, which will be updated daily by cron(man updatedb)
 ```
 sudo updatedb
 ```
+# update-alternative #
+* setup link for gcc/g++,
+  - `--install <link> <name> <path> <priority>` priority is higher if the value is bigger.
+```
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 5
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 10
+
+sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-5 5
+sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-7 10
+```
+
+* config different gcc/g++
+```
+sudo update-alternatives --config gcc
+There are 2 choices for the alternative gcc (providing /usr/bin/gcc).
+
+  Selection    Path            Priority   Status
+------------------------------------------------------------
+* 0            /usr/bin/gcc-7   10        auto mode
+  1            /usr/bin/gcc-5   5         manual mode
+  2            /usr/bin/gcc-7   10        manual mode
+
+Press <enter> to keep the current choice[*], or type selection number: 
+```
