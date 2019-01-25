@@ -113,3 +113,4 @@ git clone https://github.com/zjunweihit/jacman.git
 * [使用GitHub和Hexo搭建免费静态Blog](http://www.jianshu.com/p/3c3991658f95)
 * [hexo theme](https://hexo.io/themes/)
 * [ubuntu15.04安装hexo](http://www.linuxdiyf.com/linux/18320.html)
+* [hexo official doc](https://hexo.io/zh-cn/docs/)
