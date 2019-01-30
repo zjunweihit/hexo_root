@@ -218,9 +218,17 @@ MPI_Allreduce(
 
 ```
 
+# NCCL
+* https://docs.nvidia.com/deeplearning/sdk/nccl-developer-guide/docs/overview.html
+* https://developer.nvidia.com/nccl
+* https://devblogs.nvidia.com/fast-multi-gpu-collectives-nccl/
+* https://my.oschina.net/u/1459307/blog/1650028
+* https://baijiahao.baidu.com/s?id=1581386178946489641&wfr=spider&for=pc
 
 # Ref
 
 * https://en.wikipedia.org/wiki/Message_Passing_Interface
 * http://pages.tacc.utexas.edu/~eijkhout/pcse/html/
 * http://mpitutorial.com/
+* http://www.cnblogs.com/jpcflyer/archive/2012/03/04/2379048.html
+* https://www.cnblogs.com/earthhouge/p/9275250.html
