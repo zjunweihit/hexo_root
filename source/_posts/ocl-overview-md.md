@@ -94,19 +94,44 @@ pre-GCN, VLIW is used in CU as SIMD
 * AQL: Architecture Queuing Language
   * HSA defines AQL to run CPU and GPU by Apps.
 * ACE
-  * dispatches one wavefront from a workgroup to CU
+  * dispatches one wavefront from a workgroup to one CU
 * SIMD
   * SIMD-16, includes 16 64-bit ALU, if the package is 32/16/8-bit, it could be several of them in a cycle.
   * each SIMD can work on a separate wavefront
   * several PEs
 * wavefront(aka warp for NV)
   * the size of wavefront is (a width of SIMD unit * number of SIMD units) in CU(aligned with CU)
-    - 16 * 4 = 64
-    - could be 16 ~ 64, also for 1 SMID-16 or 1 CU(4 SIMD-16)
+    - 16 * 4 = 64 (threads or work-items, VALU)
+      - ( **could** be 16 ~ 64, also for 1 SMID-16 or 1 CU(4 SIMD-16)
   * Each SIMD unit is assigned its own 40-bit program counter and instruction buffer for 10 wavefronts.
-  * the whole CU can have 40 wavefronts in flight, a GPU with 64 CUs, can be working on up to 163,840(64*40*64) work items at a time.
+  * the whole CU **can** have 40 wavefronts(?? generally 1 wavefront) in flight, a GPU with 64 CUs, can be working on up to 163,840(64*40*64) work items at a time.
 * GDS: synchronize and communicate between tasks running on different SE. Between CUs and SEs.
 * LDS: synchronize and communicate inside CU, LDS is 64KB.
+* SE(shader engine)
+  - 1 SIMD array(SH: shader array, generally 1 per SE)
+    - CUs(16 per SH)
+      - SIMD(4 per CU)
+```
+GPU has 4 SE, 16 CU per SE, 4 SIMD-16 units for 64-bit vector processing per CU, 16 VALU(64-bit) per SIMD-16.
+It contains 4 SEs, 64 CUs, 256 SIMD-16, 4096 64-bit VALU blocks.
+
+# cat /sys/class/kfd/kfd/topology/nodes/1/properties
+cpu_cores_count 0
+simd_count 256              --  Total processor(VALU) number = 256 smid *  16 (vectors per smid)
+mem_banks_count 1
+caches_count 96
+io_links_count 1
+cpu_core_id_base 0
+simd_id_base 2147487744
+max_waves_per_simd 10
+lds_size_in_kb 64
+gds_size_in_kb 0
+wave_front_size 64          --  Total wave items runing in one SIMD per cycle
+array_count 4               --  Total 4 SIMD arrays (in this case, it has 4 shader engines too, since 1 SH per SE below)
+simd_arrays_per_engine 1    --  SIMD arrays number per shdaer engine
+cu_per_simd_array 16
+simd_per_cu 4               -- total simd count = 4(SIMD/CU) * 16(CU) * 4(SE) = 256
+```
 
 # Execution model
 * Kernel types
