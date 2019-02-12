@@ -1146,3 +1146,13 @@ There are 2 choices for the alternative gcc (providing /usr/bin/gcc).
 
 Press <enter> to keep the current choice[*], or type selection number: 
 ```
+
+# aria2c download by multi-thread
+* install
+```
+sudo apt install aria2
+```
+* download a package
+```
+aria2c  -c -s 16 -x 16 http://web/page/file.tar.bz2
+```
