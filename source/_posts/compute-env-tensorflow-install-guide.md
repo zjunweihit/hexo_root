@@ -33,12 +33,17 @@ Successfully installed absl-py-0.6.1 astor-0.7.1 gast-0.2.0 grpcio-1.17.1 h5py-2
 
 # TensorFlow for ROCm
 ## Install ROCm
-  - [ROCm Installation Guide](https://zjunweihit.github.io/2018/12/25/compute-env-rocm-md/)
+  - [ROCm Installation Guide](https://zjunweihit.github.io/2018/12/25/compute-rocm-installation/)
   - **includes ROCm libs**
 
 ## Install TensorFlow ROCm
+* Install miopen
 ```
-pip3 install tensorflow-rocm
+sudo apt install rocm-libs miopen-hip cxlactivitylogger
+```
+* Install tensorflow-rocm whl package from PyPI
+```
+pip3 install --user tensorflow-rocm
 
 Installing collected packages: wheel, six, setuptools, protobuf, markdown, grpcio, werkzeug, numpy, tensorboard, gast, keras-preprocessing, absl-py, astor, termcolor, h5py, keras-applications, tensorflow-rocm
 Successfully installed absl-py-0.6.1 astor-0.7.1 gast-0.2.0 grpcio-1.17.1 h5py-2.9.0 keras-applications-1.0.6 keras-preprocessing-1.0.5 markdown-3.0.1 numpy-1.15.4 protobuf-3.6.1 setuptools-40.6.3 six-1.12.0 tensorboard-1.12.1 tensorflow-rocm-1.12.0 termcolor-1.1.0 werkzeug-0.14.1 wheel-0.32.3
