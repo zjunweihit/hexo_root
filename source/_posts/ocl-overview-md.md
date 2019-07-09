@@ -669,7 +669,7 @@ cl_int localWorksize[1] = { 32 };
 errNum = clSetKernelArg(kernel, 0, sizeof(cl_mem), &vertexArray);
 errNum |= clSetKernelArg(kernel, 1, sizeof(cl_int), &vertexCount);
 errNum |= clSetKernelArg(kernel, 2, sizeof(cl_float), &weight);
-errNum |= clSetKernelArg(kernel, 3, sizeof(cl_float) * localWorkSize[0], &weight);
+errNum |= clSetKernelArg(kernel, 3, sizeof(cl_float) * localWorkSize[0], NULL);
 
 index 0: a point to cl_mem is a global pointer
 index 3: local argument is only available inside a kernel function, value must be NULL
