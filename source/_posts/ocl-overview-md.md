@@ -624,7 +624,7 @@ cl_program clCreateProgramWithBinary (cl_context context,
   * it can finish compiler to unload any resouces consumed by the compiler.
     - cl_int clUnloadCompiler(void)
 
-## kernel
+## Kernel
 
 * Create kernel object
 ```
@@ -639,13 +639,13 @@ cl_int clSetKernelArg (cl_kernel kernel,
                        size_t arg_size,         // size of argument, which is determined by how the argument is declared in kernel function
                        const void *arg_value)
 ```
-  - arg_size
-    - local qualified: *number of bytes*, e.g. sizeof(cl_int) * NUM_OF_ARRAY
+  - arg_size: **is determined by how the argument is declared in kernel function**
+    - local qualified(variables): *number of bytes*, e.g. sizeof(cl_int) * NUM_OF_ARRAY
     - object: size of object type, e.g. sizeof(cl_mem)
     - sampler: sizeof(cl_sampler)
     - regular type: size of argument type. e.g. sizeof(cl_int)
   - arg_value
-    - local qualified: *must be NULL*
+    - local qualified(variables): **must be NULL**
     - object: a pointer to the memory object
     - sampler: a pointer to the sampler object
     - regular type: a ponter to the argument value
@@ -736,7 +736,7 @@ cl_mem clCreateBuffer (cl_context context,
                        cl_int *errcode_ret)
 ```
   * flags: specify allocatoins and usage information
-    - CL_MEM_READ_WRITE( *default* ): the allocation memory could be read and write
+    - CL_MEM_READ_WRITE( **default** ): the allocation memory could be read and write
     - CL_MEM_READ_ONLY
     - CL_MEM_WRITE_ONLY
     - CL_MEM_USE_HOST_PTR: GTT BO. use the memory referenced by `host_ptr` as memory object, only if host_ptr is not NULL.
