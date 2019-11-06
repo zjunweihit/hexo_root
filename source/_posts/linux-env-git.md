@@ -86,6 +86,10 @@ My personal preference is to leave the setting turned ON, as a Windows developer
 
 See http://kernel.org/pub/software/scm/git/docs/git-config.html for updated info that includes the "input" value.
 ```
+* No password in push
+```
+git config --global credential.helper store
+```
 
 # 创建你的git repo #
 * 使用git创建仓库主要有两种方法.
