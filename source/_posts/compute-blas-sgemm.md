@@ -14,98 +14,88 @@ Introduce matrix maltiplication by BLAS library SGEMM API.
 # Get the output in column major
 
 For compatibility BLAS keeps the column major style as matrix stroage as same as FORTRAN.
-But it's a bit hard for C/C++ programmers, who are familiar with row major matrix.
+It's a different from C/C++ programming, which is row major matrix.
 
-e.g. `C = alpha * A * B + beta * C` as `C = A * B`, alpha= 1.0f，beta = 0.0f.
+* e.g. `C = alpha * A * B + beta * C` as `C = A * B`, alpha= 1.0f，beta = 0.0f.
 ```
+Prepare data A, B in column major and fixed shape as below:
 A (m x k) * B (k x n) = C (m x n)
    2 x 3       3 x 2       2 x 2
 
 hipblasSgemm(handle,
-             HIPBLAS_OP_T, HIPBLAS_OP_T,
+             trans_A, trans_B,
              m, n, k,
              &alpha,
-             da, lda, // lda = k
-             db, ldb, // ldb = n
+             da, lda,
+             db, ldb,
              &beta,
-             dc, ldc) // ldc = m
+             dc, ldc)
+```
+* NN => lda = m, ldb = k
+```
+| 0 2 4 | * | 6 3 |  =  | 26  8 |
+| 1 3 5 |   | 5 2 |     | 41 14 |
+            | 4 1 |
+```
+* NT => lda = m, ldb = n
+```
+| 0 2 4 | * | 6 5 |  =  | 16 10 |
+| 1 3 5 |   | 4 3 |     | 28 19 |
+            | 2 1 |
 
-CPU(row major):
+original B (n x k): 3 x 2
 
-| 0 1 2 |   | 6 5 |     |  8  5 |
+| 6 4 2 |
+| 5 3 1 |
+
+BT in sgemm for matrix multiplication
+
+|6 5 |
+|4 3 |
+|2 1 |
+
+```
+* TN => lda = k, ldb = k
+```
+| 0 1 2 | * | 6 3 |  =  | 13 4  |
+| 3 4 5 |   | 5 2 |     | 58 22 |
+            | 4 1 |
+
+original A (k x m): 3 x 2
+
+| 0 3 |
+| 1 4 |
+| 2 5 |
+
+BT in sgemm for matrix multiplication
+
+| 0 1 2 |
+| 3 4 5 |
+```
+* TT => lda = k, ldb = n
+```
+| 0 1 2 | * | 6 5 |  =  |  8  5 |
 | 3 4 5 |   | 4 3 |     | 44 32 |
             | 2 1 |
 
-GPU(column major):
+orignal A (k x m): 3 x 2 => AT (m x k)
 
-| 0 3 |     | 6 4 2 |   |  8  5 |
-| 1 4 |     | 5 3 1 |   | 44 32 |
-| 2 5 |      =>T           |
- => T                      | copy to CPU as matrix transpose
-                           V
-CPU(row major):
-                        |  8 44 |
-                        |  5 32 |
+| 0 3 | T  | 0 1 2 |
+| 1 4 | => | 3 4 5 | in sgemm for matrix multiplication
+| 2 5 |
 
-A(m x k) -> GPU: AT(k x m) -> HIPBLAS_OP_T -> GPU: A(m x k)
-B(k x n) -> GPU: BT(n x k) -> HIPBLAS_OP_T -> GPU: B(k x n)
+orignal B (n x k): 2 x 3 => BT (k x n)
 
-do sgemm
-GPU: C(m x n) -> copy to CPU -> CPU: CT( n x m )
+| 6 4 2 | T  | 6 5 |
+| 5 3 1 | => | 4 3 | in sgemm for matrix multiplication
+             | 2 1 |
+
 ```
 
 Leading Dimension:
   * The first index in the dimension. A(20, 10), lda=20, row number.
   * If we set `HIPBLAS_OP_T`, it will be the column number, otherwise, it's row number.
-  * Get the Leading Dimension with *the matrix in GPU* for multiplication.
-
-Summary:
-```
-C = A * B
-
-利用cublasSgemm的参数 transa（transb） 和 lda（ldb）的设置来共同解决存储方式改变的问题。
-关于A,B的参数（行和列）是in GPU时的matrix.
-
-        CPU     GPU
-    (1) A, B
-    cublasSgemm('t','t', c_row, c_col, a_col, alpha, A, a_col, B, b_col, beta, C, c_row);
-    如果求AT*B，只需将A的t改为n
-
-    (2) B       A
-    cublasSgemm('n','t', c_row, c_col, a_col, alpha, A, a_row, B, b_col, beta, C, c_row);
-
-    (3) A       B
-    cublasSgemm('t','n', c_row, c_col, a_col, alpha, A, a_col, B, b_row, beta, C, c_row);
-
-    (4)         A, B
-    cublasSgemm('n','n', c_row, c_col, a_col, alpha, A, a_row, B, b_row, beta, C, c_row);
-
-得到的结果C都是按列存储的（拷贝出host内存之前转置一下，可以考虑使用, 例如cublasSgeam()(矩阵加法),
-进行一次1.0 * AT + 0.0 * B的参数设定, 利用内置的转置功能(注意这里的1和0), 来进行将A转换成AT）。
-
-如果是CPU创建的矩阵，要设置T，随之ld使用列，反之用行。
-```
-
-# Get the output in row major
-
-As we know, blas uses column major matrix. If going to get the C in row major as result, we can do `CT = BT * AT`, copy CT to CPU and get C directly.
-```
-A (m x k) * B (k x n) = C (m x n)
-   2 x 3       3 x 2       2 x 2
-
-BT(n x k) * AT(k x m) = CT(n x m) in GPU
-   2 x 3       3 x 2       2 x 2
-
-hipblasSgemm(handle,
-             HIPBLAS_OP_N, HIPBLAS_OP_N,
-             n, m, k,
-             &alpha,
-             db, ldb, // ldb = n
-             da, lda, // lda = k
-             &beta,
-             dc, ldc) // ldc = n
-```
+  * The number of items in next line at the same position as the current line in matrix order(row major or column major)
 
 # Reference
 * [Row- and column-major order](https://en.wikipedia.org/wiki/Row-_and_column-major_order)
-* [cuda 矩阵乘法函数之cublasSgemm](https://blog.csdn.net/u011460059/article/details/56506987)
